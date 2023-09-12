@@ -13,6 +13,7 @@
 		E3F8964A2AB10476002A12BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F896482AB10476002A12BD /* Main.storyboard */; };
 		E3F8964C2AB10477002A12BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3F8964B2AB10477002A12BD /* Assets.xcassets */; };
 		E3F8964F2AB10477002A12BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F8964D2AB10477002A12BD /* LaunchScreen.storyboard */; };
+		E3F8965C2AB104EB002A12BD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F8965B2AB104EB002A12BD /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E3F8964B2AB10477002A12BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3F8964E2AB10477002A12BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3F896502AB10477002A12BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3F8965B2AB104EB002A12BD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		E3F896412AB10476002A12BD /* NetworkWithAlamofire */ = {
 			isa = PBXGroup;
 			children = (
-				E3F896422AB10476002A12BD /* AppDelegate.swift */,
-				E3F896442AB10476002A12BD /* SceneDelegate.swift */,
-				E3F896462AB10476002A12BD /* ViewController.swift */,
-				E3F896482AB10476002A12BD /* Main.storyboard */,
-				E3F8964B2AB10477002A12BD /* Assets.xcassets */,
-				E3F8964D2AB10477002A12BD /* LaunchScreen.storyboard */,
-				E3F896502AB10477002A12BD /* Info.plist */,
+				E3F8965A2AB104DC002A12BD /* Services */,
+				E3F896562AB10487002A12BD /* App */,
+				E3F896572AB104B2002A12BD /* ViewControllers */,
+				E3F896582AB104C0002A12BD /* Storyboards */,
+				E3F896592AB104CA002A12BD /* Resources */,
 			);
 			path = NetworkWithAlamofire;
+			sourceTree = "<group>";
+		};
+		E3F896562AB10487002A12BD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E3F896422AB10476002A12BD /* AppDelegate.swift */,
+				E3F896442AB10476002A12BD /* SceneDelegate.swift */,
+				E3F896502AB10477002A12BD /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E3F896572AB104B2002A12BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3F896462AB10476002A12BD /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E3F896582AB104C0002A12BD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E3F896482AB10476002A12BD /* Main.storyboard */,
+				E3F8964D2AB10477002A12BD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E3F896592AB104CA002A12BD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3F8964B2AB10477002A12BD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E3F8965A2AB104DC002A12BD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E3F8965B2AB104EB002A12BD /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F8965C2AB104EB002A12BD /* NetworkManager.swift in Sources */,
 				E3F896472AB10476002A12BD /* ViewController.swift in Sources */,
 				E3F896432AB10476002A12BD /* AppDelegate.swift in Sources */,
 				E3F896452AB10476002A12BD /* SceneDelegate.swift in Sources */,
@@ -288,12 +332,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkWithAlamofire/Info.plist;
+				INFOPLIST_FILE = NetworkWithAlamofire/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,9 +345,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.osipov.dobrynia.NetworkWithAlamofire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,12 +362,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkWithAlamofire/Info.plist;
+				INFOPLIST_FILE = NetworkWithAlamofire/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,9 +375,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.osipov.dobrynia.NetworkWithAlamofire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
