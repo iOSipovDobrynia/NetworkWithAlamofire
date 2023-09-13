@@ -30,5 +30,4 @@ class CoursesListController: UITableViewController {
         }
         return cell
     }
-
 }

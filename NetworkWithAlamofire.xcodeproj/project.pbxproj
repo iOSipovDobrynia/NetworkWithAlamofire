@@ -45,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E3AFA1AC2AB20F7D006B86E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3AFA1A82AB20C13006B86E8 /* CourseCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E3F896362AB10476002A12BD = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +74,7 @@
 			children = (
 				E3F8965F2AB1061F002A12BD /* Model */,
 				E3F896572AB104B2002A12BD /* ViewControllers */,
+				E3AFA1AC2AB20F7D006B86E8 /* Views */,
 				E3F896582AB104C0002A12BD /* Storyboards */,
 				E3F8965A2AB104DC002A12BD /* Services */,
 				E3F896562AB10487002A12BD /* App */,
@@ -88,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				E3F8965D2AB1059F002A12BD /* CoursesListController.swift */,
-				E3AFA1A82AB20C13006B86E8 /* CourseCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
