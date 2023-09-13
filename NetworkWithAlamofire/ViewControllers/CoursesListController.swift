@@ -15,12 +15,12 @@ class CoursesListController: UITableViewController {
     // MARK: - View's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "Course", bundle: nil), forCellReuseIdentifier: "course")
+        tableView.register(UINib(nibName: "CourseCell", bundle: nil), forCellReuseIdentifier: "course")
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return courses.count
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
