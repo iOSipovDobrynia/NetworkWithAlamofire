@@ -28,6 +28,7 @@ class CoursesListController: UITableViewController {
         guard let cell = cell as? CourseCell else {
             return UITableViewCell()
         }
+//        cell.configure(with: courses[indexPath.row])
         return cell
     }
 }
