@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewCourseViewController: UIViewController {
+final class NewCourseViewController: UIViewController {
     
     // MARK: - Override func
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

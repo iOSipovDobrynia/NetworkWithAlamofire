@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CourseCell: UITableViewCell {
+final class CourseCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var numberOfLessonsLabel: UILabel!

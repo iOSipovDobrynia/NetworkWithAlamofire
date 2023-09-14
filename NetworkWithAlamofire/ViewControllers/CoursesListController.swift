@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoursesListController: UITableViewController {
+final class CoursesListController: UITableViewController {
     
     // MARK: - Public properties
     var courses: [Course] = []
