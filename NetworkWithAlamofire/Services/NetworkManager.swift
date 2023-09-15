@@ -19,7 +19,7 @@ enum Link: String {
     case postRequest = "https://jsonplaceholder.typicode.com/posts"
 }
 
-class NetworkManager {
+final class NetworkManager {
     static let shared = NetworkManager()
     
     private init() {}

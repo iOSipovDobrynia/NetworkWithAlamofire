@@ -58,6 +58,7 @@ final class CoursesListController: UITableViewController {
     }
 }
 
+// MARK: - NewCourseViewControllerDelegate
 extension CoursesListController: NewCourseViewControllerDelegate {
     func sendPostRequest(with data: Course) {
         NetworkManager.shared.sendCourseWithPostRequest(
