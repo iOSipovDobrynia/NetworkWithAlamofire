@@ -117,8 +117,17 @@
                                 <action selector="cancelButtonPressed:" destination="b0p-M0-xkC" id="de2-ep-sHn"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dEj-rP-ZqR"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dEj-rP-ZqR">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="b0p-M0-xkC" id="Y8Z-XV-7TR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lessonsTF" destination="7Hq-ia-mgU" id="YQG-c7-Ijh"/>
+                        <outlet property="nameTF" destination="sQu-gu-o2m" id="3ag-BD-cGu"/>
+                        <outlet property="testsTF" destination="4OM-vI-588" id="FJe-wI-McW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGm-ck-yPA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,7 +138,7 @@
             <objects>
                 <navigationController id="ofW-Fz-J9p" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="CPu-Qt-bex">
-                        <rect key="frame" x="0.0" y="20" width="320" height="98.5"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="92.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

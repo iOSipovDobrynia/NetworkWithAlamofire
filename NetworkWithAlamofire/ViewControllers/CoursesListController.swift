@@ -16,11 +16,12 @@ final class CoursesListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "CourseCell", bundle: nil), forCellReuseIdentifier: "course")
+        fetchCourses()
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return courses.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -28,7 +29,19 @@ final class CoursesListController: UITableViewController {
         guard let cell = cell as? CourseCell else {
             return UITableViewCell()
         }
-//        cell.configure(with: courses[indexPath.row])
+        cell.configure(with: courses[indexPath.row])
         return cell
+    }
+    
+    private func fetchCourses() {
+        NetworkManager.shared.fetchCourses(from: Link.coursesURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let courses):
+                self?.courses = courses
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
