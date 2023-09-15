@@ -38,6 +38,13 @@ final class CoursesListController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navigationVC = segue.destination as? UINavigationController else { return }
+        guard let newCourseVC = navigationVC.topViewController as? NewCourseViewController else { return }
+        newCourseVC.delegate = self
+    }
+    
     private func fetchCourses() {
         NetworkManager.shared.fetchCourses(from: Link.coursesURL.rawValue) { [weak self] result in
             switch result {
@@ -48,5 +55,25 @@ final class CoursesListController: UITableViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+}
+
+extension CoursesListController: NewCourseViewControllerDelegate {
+    func sendPostRequest(with data: Course) {
+        NetworkManager.shared.sendCourseWithPostRequest(
+            to: Link.postRequest.rawValue,
+            with: data
+        ) { [weak self] result in
+                switch result {
+                case .success(let course):
+                    self?.courses.append(course)
+                    self?.tableView.insertRows(
+                        at: [IndexPath(row: (self?.courses.count ?? 0) - 1, section: 0)],
+                        with: .automatic
+                    )
+                case .failure(let error):
+                    print(error)
+                }
+            }
     }
 }

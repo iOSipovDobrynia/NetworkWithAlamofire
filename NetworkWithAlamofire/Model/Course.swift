@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Course: Decodable {
+struct Course: Codable {
     let name: String
     let imageUrl: String
     let numberOfLessons: Int
@@ -27,8 +27,22 @@ struct Course: Decodable {
         numberOfTests = courseData["number_of_tests"] as? Int ?? 0
     }
     
+    init(courseJP: CourseJP) {
+        name = courseJP.name
+        imageUrl = courseJP.imageUrl
+        numberOfLessons = Int(courseJP.numberOfLessons) ?? 0
+        numberOfTests = Int(courseJP.numberOfTests) ?? 0
+    }
+    
     static func getCourses(from value: Any) -> [Course] {     
         guard let coursesData = value as? [[String: Any]] else { return [] }
         return coursesData.map { Course(courseData: $0) }
     }
+}
+
+struct CourseJP: Codable {
+    let name: String
+    let imageUrl: String
+    let numberOfLessons: String
+    let numberOfTests: String
 }

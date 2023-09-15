@@ -50,4 +50,18 @@ class NetworkManager {
                 }
             }
     }
+    
+    func sendCourseWithPostRequest(to url: String, with data: Course, completion: @escaping(Result<Course, AFError>) -> Void) {
+        AF.request(url, method: .post, parameters: data)
+            .validate()
+            .responseDecodable(of: CourseJP.self) { dataResponse in
+                switch dataResponse.result {
+                case .success(let courseJP):
+                    let course = Course(courseJP: courseJP)
+                    completion(.success(course))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
 }
