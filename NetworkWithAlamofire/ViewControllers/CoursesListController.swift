@@ -33,6 +33,11 @@ final class CoursesListController: UITableViewController {
         return cell
     }
     
+    // MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     private func fetchCourses() {
         NetworkManager.shared.fetchCourses(from: Link.coursesURL.rawValue) { [weak self] result in
             switch result {
